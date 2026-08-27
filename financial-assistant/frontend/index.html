@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>📈 Financial Assistant</h1>
+      <p class="subtitle">Тикер → реальные данные с рынка → объяснение Claude простым языком</p>
+    </header>
+
+    <form id="ticker-form" class="ticker-form">
+      <input id="symbol-input" type="text" placeholder="Тикер, например AAPL" autocomplete="off" />
+      <input id="question-input" type="text" placeholder="Необязательный вопрос (например: почему упала?)" autocomplete="off" />
+      <button type="submit" id="submit-btn">Разобрать</button>
+    </form>
+
+    <p id="status" class="status"></p>
+
+    <section id="result" class="result hidden">
+      <div class="quote-card">
+        <div class="quote-main">
+          <span id="q-symbol" class="q-symbol"></span>
+          <span id="q-price" class="q-price"></span>
+          <span id="q-change" class="q-change"></span>
+        </div>
+        <div class="quote-meta">
+          <span>Пред. закрытие: <b id="q-prev"></b></span>
+          <span>Объём: <b id="q-volume"></b></span>
+          <span>Дата: <b id="q-date"></b></span>
+        </div>
+        <svg id="sparkline" viewBox="0 0 300 60" preserveAspectRatio="none"></svg>
+      </div>
+
+      <div class="explanation">
+        <h2>Что происходит</h2>
+        <p id="explanation-text"></p>
+      </div>
+
+      <div class="news">
+        <h2>Свежие новости</h2>
+        <ul id="news-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
