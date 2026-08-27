@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAG Notes Search</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>📓 Notes RAG</h1>
+      <p class="subtitle">Семантический поиск по заметкам с ответами Claude</p>
+
+      <form id="upload-form" class="upload-form">
+        <label class="file-drop" for="file-input">
+          <span id="file-drop-label">Загрузить .txt / .md / .pdf</span>
+          <input id="file-input" type="file" accept=".txt,.md,.markdown,.pdf" required />
+        </label>
+        <button type="submit" id="upload-btn">Добавить в базу</button>
+      </form>
+      <p id="upload-status" class="status"></p>
+
+      <h2>Документы</h2>
+      <ul id="doc-list" class="doc-list"></ul>
+    </aside>
+
+    <main class="chat">
+      <div id="messages" class="messages">
+        <div class="empty-state">
+          Загрузите свои заметки слева и задайте вопрос — ответ будет построен
+          только на основе найденных фрагментов.
+        </div>
+      </div>
+
+      <form id="ask-form" class="ask-form">
+        <input
+          id="question-input"
+          type="text"
+          placeholder="Спросите что-нибудь о своих заметках…"
+          autocomplete="off"
+        />
+        <button type="submit" id="ask-btn">Спросить</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Code Reviewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>🔍 AI Code Reviewer</h1>
+      <p class="subtitle">Вставь код — Claude вернёт структурированный разбор в виде карточек</p>
+    </header>
+
+    <div class="editor-row">
+      <select id="language-select">
+        <option value="">Определить автоматически</option>
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="typescript">TypeScript</option>
+        <option value="go">Go</option>
+        <option value="java">Java</option>
+        <option value="rust">Rust</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="sql">SQL</option>
+        <option value="other">Другое</option>
+      </select>
+      <button id="review-btn">Проверить код</button>
+    </div>
+
+    <textarea id="code-input" spellcheck="false" placeholder="Вставьте код сюда…"></textarea>
+
+    <p id="status" class="status"></p>
+
+    <section id="result" class="result hidden">
+      <div class="summary-card">
+        <div class="score" id="score"></div>
+        <p id="summary-text"></p>
+      </div>
+
+      <div id="issues" class="issues"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
